@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 const HeaderNav = () => {
     return (
-        <header>
-            <div className="container header-nav">
+        <header className="header-nav">
+            <div className="container header-nav-container">
                 <img src="/assets/shared/tablet/icon-hamburger.svg" className="hamburger" alt="Hamburger" />
                 <img src="/assets/shared/desktop/logo.svg" alt="Logo" className="logo" />
                 <ul className="nav-links">

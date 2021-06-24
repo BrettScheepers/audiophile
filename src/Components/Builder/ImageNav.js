@@ -2,8 +2,8 @@ import React from 'react'
 
 const ImageNav = () => {
     return (
-        <nav>
-            <div className="container image-nav py-even">
+        <nav className="image-nav">
+            <div className="container image-nav-container">
                 <div className="image-nav-item">
                     <img src="\assets\shared\desktop\image-headphones.png" alt="headphones" className="image-nav-img" style={{width: "150px"}} />
                     <h6>headphones</h6>
