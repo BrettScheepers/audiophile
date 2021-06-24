@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+/* Colors */
+:root {
+    --orange: #D87D4A;
+    --orange-accent: #FBAF85;
+    --black: #000;
+    --black-accent: #101010;
+    --white: #fff;
+    --white-accent-1: #fafafa;
+    --white-accent-2: #f1f1f1;
+
+    --border-radius: 5px;
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+#root {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+/* ./Typography */
+h1 {
+    font-size: 56px;
+    text-transform: uppercase;
+    line-height: 58px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--black-accent);
+}
+h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: var(--black-accent);
+}
+h3 {
+    font-size: 32px;
+    text-transform: uppercase;
+    line-height: 36px;
+    letter-spacing: 1.15px;
+    font-weight: bold;
+    color: var(--black-accent);
+}
+h4 {
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 38px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--black-accent);
+}
+h5 {
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+    font-weight: bold;
+    color: var(--black-accent);
+}
+h6 {
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    color: var(--black-accent);
+}
+
+.overline {
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 19px;
+    letter-spacing: 10px;
+    font-weight: 400;
+    color: var(--orange-accent);
+}
+
+.subtitle {
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--orange);
+}
+
+/* ./Buttons */
+button {
+    all: unset;
+}
+
+.btn-orange {
+    width: 160px;
+    height: 48px;
+    color: var(--orange);
+}
+.btn-orange:hover {
+    color: var(--orange-accent);
+}
+
+.btn-black {
+    width: 160px;
+    height: 48px;
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+}
+.btn-black:hover {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.btn-basic {
+    color: var(--white-accent-2);
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
