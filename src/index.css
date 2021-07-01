@@ -8,6 +8,7 @@
     --white: #fff;
     --white-accent-1: #fafafa;
     --white-accent-2: #f1f1f1;
+    --white-accent-3: hsl(0, 0%, 60%);
     --white-accent-text: hsl(0, 0%, 40%);
 
     --border-radius: 8px;
@@ -50,15 +51,15 @@ img {
 
 /* Base CSS */
 /* General Styles */
-h1 {
+/* h1 {
     font-size: 56px;
     text-transform: uppercase;
     line-height: 58px;
     letter-spacing: 2px;
     font-weight: bold;
-    /* color: var(--black-accent); */
-}
-h2 {
+    color: var(--black-accent);
+} */
+h1, h2 {
     font-size: 40px;
     text-transform: uppercase;
     line-height: 44px;
@@ -102,6 +103,12 @@ h6 {
 nav, section {
     width: 100%;
     margin: 8rem 0;
+}
+
+section.title {
+    background-color: var(--black);
+    margin-top: 0;
+    margin-bottom: 8rem;
 }
 
 nav {
@@ -151,18 +158,37 @@ button {
 .btn-orange {
     width: 160px;
     height: 48px;
-    color: var(--orange);
+    background-color: var(--orange);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    cursor: pointer;
 }
 .btn-orange:hover {
-    color: var(--orange-accent);
+    background-color: var(--orange-accent);
 }
 
 .btn-black {
     width: 160px;
     height: 48px;
-    background-color: var(--white);
+    background-color: transparent;
     color: var(--black);
     border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    cursor: pointer;
 }
 .btn-black:hover {
     color: var(--white);
@@ -172,6 +198,14 @@ button {
 .btn-basic {
     color: var(--white-accent-text);
     text-transform: uppercase;
+    transition: var(--transition);
+}
+.btn-basic:hover {
+    color: var(--orange);
+}
+
+.my > * {
+    margin: 0.75rem 0;
 }
 
 .nav-links {
@@ -299,10 +333,56 @@ button {
     fill: var(--orange);
 }
 
+/* Home */
+.home-title-container {
+    padding: 2rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.home-title-img {
+    max-width: 500px;
+}
+
+.home-title-content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    /* width: 35%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* .home-title-content > h1 {
+    margin: 1rem 0;
+} */
+.home-title-content > p {
+    min-width: 20ch;
+    width: 100%;
+    max-width: 40ch;
+    color: var(--white-accent-3);
+}
+.home-title-content > button {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* Media Queries */
 @media screen and (min-width: 550px) {
+    /* Reset */
+    h1 {
+        font-size: 56px;
+        text-transform: uppercase;
+        line-height: 58px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        /* color: var(--black-accent); */
+    }
     /* HeaderNav */
     .logo {
         margin-left: 2rem;
@@ -343,6 +423,10 @@ button {
     .footer-copyright {
         text-align: start;
     }
+    /* Home */
+    /* .home-title-content h1 {
+        font-size: 40px;
+    } */
 }
 
 @media screen and (min-width: 1100px) {
@@ -414,5 +498,22 @@ button {
     }
     .footer-copyright {
         grid-area: copyright;
+    }
+
+    /* Home */
+    .home-title-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .home-title-content {
+        position: inherit;
+        transform: none;
+        top: 0;
+        text-align: start;
+        align-items: flex-start;
+    }
+    .home-title-content button {
+        margin-left: 0;
+        margin-right: auto;
     }
 }
