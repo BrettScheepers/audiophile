@@ -17,17 +17,52 @@ const Home = () => {
                         </p>
                         <button className="btn btn-orange">See Product</button>
                     </div>
-                    <picture>
-                        {/* <source media="(min-width:1100px)" srcSet="\assets\shared\desktop\image-best-gear.jpg" />
-                        <source media="(min-width:550px)" srcSet="\assets\shared\tablet\image-best-gear.jpg" /> */}
-                        <img src="assets/home/image-header-tablet-bg-remove.png" alt="Hero" className="home-title-img" />
-                    </picture>
+                    <img src="assets/home/image-header-tablet-bg-remove.png" alt="Hero" className="home-title-img" />
                 </div>
             </section>
             <ImageNav />
             <section>
                 <div className="container home-content-container">
-                    
+                    <div className="home-main-speaker">
+                        <div className="home-main-speaker-img">
+                            <picture>
+                                <source media="(min-width:1100px)" srcSet="\assets\home\desktop\image-speaker-zx9.png" />
+                                <source media="(min-width:550px)" srcSet="\assets\home\tablet\image-speaker-zx9.png" />
+                                <img src="\assets\home\mobile\image-speaker-zx9.png" alt="zx9 Speaker"/>
+                            </picture>
+                        </div>
+                        <div className="home-main-speaker-text my">
+                            <h2>ZX9 <br /> speaker</h2>
+                            <p style={{color: "var(--white-accent-2)", width: "clamp(10ch, 100%, 40ch)"}}>
+                                Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
+                            </p>
+                            <button className="btn btn-black">see product</button>
+                        </div>
+                    </div>
+                    <div className="home-secondary-speaker">
+                        <picture>
+                                <source media="(min-width:1100px)" srcSet="\assets\home\desktop\image-speaker-zx7.jpg" />
+                                <source media="(min-width:550px)" srcSet="\assets\home\tablet\image-speaker-zx7.jpg" />
+                                <img src="\assets\home\mobile\image-speaker-zx7.jpg" alt="zx7 Speaker"/>
+                        </picture>
+                        <div className="home-secondary-speaker-text my">
+                            <h3>ZX7 speaker</h3>
+                            <button className="btn btn-black">see product</button>
+                        </div>
+                    </div>
+                    <div className="home-earphones">
+                        <picture>
+                                <source media="(min-width:1100px)" srcSet="\assets\home\desktop\image-earphones-yx1.jpg" />
+                                <source media="(min-width:550px)" srcSet="\assets\home\tablet\image-earphones-yx1.jpg" />
+                                <img src="\assets\home\mobile\image-earphones-yx1.jpg" alt="yx1 Earphones"/>
+                        </picture>
+                    </div>
+                    <div className="home-earphones-text">
+                        <div className="home-earphones-text-wrapper my">
+                            <h3>YX1 earphones</h3>
+                            <button className="btn btn-black">see product</button>
+                        </div>
+                    </div>
                 </div>
             </section>
             <Brag />
