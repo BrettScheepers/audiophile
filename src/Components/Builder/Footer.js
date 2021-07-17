@@ -16,13 +16,13 @@ const Footer = () => {
                         <NavLink to="/">
                             Home
                         </NavLink>
-                        <NavLink to="/">
+                        <NavLink to="/Category/Headphones">
                             Headphones
                         </NavLink>
-                        <NavLink to="/">
+                        <NavLink to="/Category/Speakers">
                             Speakers
                         </NavLink>
-                        <NavLink to="/">
+                        <NavLink to="/Category/Earphones">
                             Earphones
                         </NavLink>
                     </ul>
