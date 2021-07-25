@@ -10,7 +10,7 @@ const Brag = () => {
                     <img src="\assets\shared\mobile\image-best-gear.jpg" alt="Quality Gear" className="brag-img" />
                 </picture>
                 <div className="brag-text-container">
-                    <h2>Bringing you the <span>best</span> audio gear</h2>
+                    <h2>Bringing you the <span className="span-orange">best</span> audio gear</h2>
                     <p>
                         Located at the heart of Cape Town, Audiophile is the premier store for high end headphones, 
                         earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 

@@ -1,8 +1,11 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import ImageNav from '../Builder/ImageNav'
 import Brag from '../Builder/Brag'
 
 const Home = () => {
+    const history = useHistory()
+
     return (
         <>
             <section className="title">
@@ -15,7 +18,8 @@ const Home = () => {
                         <p>
                             Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
                         </p>
-                        <button className="btn btn-orange">See Product</button>
+                        <button onClick={() => history.push(`/Product/xx99-mark-two-headphones`)}
+                            className="btn btn-orange">See Product</button>
                     </div>
                     <img src="assets/home/image-header-tablet-bg-remove.png" alt="Hero" className="home-title-img" />
                 </div>
@@ -36,7 +40,8 @@ const Home = () => {
                             <p style={{color: "var(--white-accent-2)", width: "clamp(10ch, 100%, 40ch)"}}>
                                 Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
                             </p>
-                            <button className="btn btn-black">see product</button>
+                            <button onClick={() => history.push(`/Product/zx9-speaker`)}
+                                className="btn btn-black">see product</button>
                         </div>
                     </div>
                     <div className="home-secondary-speaker">
@@ -47,7 +52,8 @@ const Home = () => {
                         </picture>
                         <div className="home-secondary-speaker-text my">
                             <h3>ZX7 speaker</h3>
-                            <button className="btn btn-black">see product</button>
+                            <button onClick={() => history.push(`/Product/zx7-speaker`)}
+                                className="btn btn-black">see product</button>
                         </div>
                     </div>
                     <div className="home-earphones">
@@ -60,7 +66,8 @@ const Home = () => {
                     <div className="home-earphones-text">
                         <div className="home-earphones-text-wrapper my">
                             <h3>YX1 earphones</h3>
-                            <button className="btn btn-black">see product</button>
+                            <button onClick={() => history.push(`/Product/yx1-earphones`)}
+                                className="btn btn-black">see product</button>
                         </div>
                     </div>
                 </div>

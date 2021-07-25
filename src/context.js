@@ -5,11 +5,27 @@ const AppContext = React.createContext();
 
 export const AppProvider = ({children}) => {
     const data = Data;
-    console.log(Data)
+    const [openImageNavModal, setOpenImageNavModal] = useState(false)
+    const [openCartModal, setOpenCartModal] = useState(false)
+    const [cart, setCart] = useState([])
+    const [cartItemsCost, setCartItemsCost] = useState(0)
     
+    const closeAllModals = () => {
+        setOpenCartModal(false)
+        setOpenImageNavModal(false)
+    }
+
+    const handleBackgroundClick = (e) => {
+        if (e.target === e.currentTarget) closeAllModals()
+    } 
+
+    useEffect(() => {
+        setCartItemsCost(cart.reduce((acc, cur) => { return acc + cur.item.price*cur.quantity }, 0) || 0)
+    }, [cart])
+
     return (
         <AppContext.Provider value={{
-            data
+            data, cart, setCart, openCartModal, openImageNavModal, setOpenCartModal, setOpenImageNavModal, closeAllModals, cartItemsCost, setCartItemsCost, handleBackgroundClick
         }}>
             {children}
         </AppContext.Provider>
