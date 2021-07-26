@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { useGlobalContext } from '../../context'
-import ImageNav from './ImageNav'
 
 const HeaderNav = () => {
     const history = useHistory()

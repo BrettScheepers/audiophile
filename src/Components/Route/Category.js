@@ -16,7 +16,7 @@ const Category = ({ match }) => {
             </section>
             {
                 categoryData.map((el, index) => {
-                    const { name, description, image: { mobile, desktop, tablet }, slug } = el
+                    const { name, description, image: { mobile, desktop }, slug } = el
                     
                     return (
                         <section key={index}>
