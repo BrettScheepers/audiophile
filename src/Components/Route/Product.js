@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { useGlobalContext } from '../../context'
 import { useHistory } from 'react-router-dom'
 import ImageNav from '../Builder/ImageNav'
@@ -8,7 +8,7 @@ const Product = ({ match }) => {
     const history = useHistory()
     const { data, cart, setCart } = useGlobalContext()
     let product = data.find(item => item.slug === match.params.product)
-    const { slug, name, description, image: { desktop, tablet, mobile }, features, price, includes, gallery, others } = product
+    const { name, description, image: { desktop, mobile }, features, price, includes, gallery, others } = product
     const galleryArr = Object.values(gallery)
 
     const [cartCounter, setCartCounter] = useState(1)
@@ -55,7 +55,6 @@ const Product = ({ match }) => {
         else setCart([...cart, cartItem])
 
         setCartCounter(1)
-        // console.log(cart)
     }
 
     return (

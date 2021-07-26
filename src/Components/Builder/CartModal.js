@@ -1,23 +1,12 @@
-import React, { useEffect} from 'react'
+import React, { } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useGlobalContext } from '../../context'
 
 const CartModal = () => {
-    const { cart, setCart, closeAllModals, cartItemsCost, setCartItemsCost, handleBackgroundClick } = useGlobalContext()
+    const { cart, setCart, closeAllModals, cartItemsCost, handleBackgroundClick, newName } = useGlobalContext()
     const history = useHistory()
 
-    const newName = (nameStr) => {
-        let nameArr = nameStr.toLowerCase().split(" ").slice(0, -1)
-
-        for (let i = 0; i < nameArr.length; i++) {
-            if (nameArr[i] === "mark") nameArr[i] = "mk"
-        }
-
-        return nameArr.join(" ").toUpperCase()
-    }
-
     const changeCartItemQuantity = (e) => {
-        // console.log(e.currentTarget.parentElement.parentElement.key)
         let cartItem = e.currentTarget.parentElement.parentElement.id
         let changeQuantityId = e.currentTarget.id
 
@@ -49,10 +38,10 @@ const CartModal = () => {
 
     return (
         <div className="modal-background cart-modal-background" onClick={(e) => handleBackgroundClick(e)}>
-            <div className="container"  onClick={(e) => handleBackgroundClick(e)}>
+            <div className="container" onClick={(e) => handleBackgroundClick(e)}>
                 <div className="cart-modal-container">
                     <div className="cart-modal-header-div">
-                    <h4>Cart (3)</h4>
+                    <h4>Cart ({cart.length || 0})</h4>
                     <button onClick={() => setCart([])}
                         className="btn btn-basic">Remove All</button>
                     </div>

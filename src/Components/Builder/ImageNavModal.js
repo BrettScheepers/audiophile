@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context'
 const ImageNavModal = () => {
     const history = useHistory()
 
-    const { setOpenCartModal, setOpenImageNavModal, openCartModal, openImageNavModal, closeAllModals, handleBackgroundClick } = useGlobalContext()
+    const { closeAllModals, handleBackgroundClick } = useGlobalContext()
 
     return (
         <div className="modal-background image-modal-nav-background" onClick={(e) => handleBackgroundClick(e)}>

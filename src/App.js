@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { useGlobalContext } from './context'
 import Home from './Components/Route/Home'
 import Category from './Components/Route/Category'
@@ -9,11 +9,11 @@ import HeaderNav from './Components/Builder/HeaderNav'
 import Footer from './Components/Builder/Footer'
 import CartModal from './Components/Builder/CartModal'
 import ImageNavModal from './Components/Builder/ImageNavModal'
+import CheckoutModal from './Components/Builder/CheckoutModal'
 
 function App() {
-  const history = useHistory()
 
-  const { openCartModal, openImageNavModal } = useGlobalContext()
+  const { openCartModal, openImageNavModal, openCheckoutModal } = useGlobalContext()
 
   return (
     <>
@@ -21,6 +21,7 @@ function App() {
 
       { openImageNavModal && <ImageNavModal /> }
       { openCartModal && <CartModal /> }
+      { openCheckoutModal && <CheckoutModal />}
 
       <Switch>
         <Route path="/" exact component={Home} />
