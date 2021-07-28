@@ -10,6 +10,9 @@ export const AppProvider = ({children}) => {
     const [openCheckoutModal, setOpenCheckoutModal] = useState(false)
     const [cart, setCart] = useState([])
     const [cartItemsCost, setCartItemsCost] = useState(0)
+    const shippingFee = 200
+    const vatValue = Math.floor(cartItemsCost/100*14)
+    const [ grandTotal, setGrandTotal ] = useState(cartItemsCost + shippingFee)
     
     const closeAllModals = () => {
         setOpenCartModal(false)
@@ -27,6 +30,13 @@ export const AppProvider = ({children}) => {
             if (nameArr[i] === "mark") nameArr[i] = "mk"
         }
 
+        const removeSpecificWord = (word) => {
+            let removedWordIndex = nameArr.indexOf(word)
+            if (removedWordIndex > 0) nameArr.splice(removedWordIndex, 1)
+        }
+
+        removeSpecificWord("wireless")
+
         return nameArr.join(" ").toUpperCase()
     }
 
@@ -34,9 +44,13 @@ export const AppProvider = ({children}) => {
         setCartItemsCost(cart.reduce((acc, cur) => { return acc + cur.item.price*cur.quantity }, 0) || 0)
     }, [cart])
 
+    useEffect(() => {
+        setGrandTotal(cartItemsCost + shippingFee)
+    }, [cartItemsCost])
+
     return (
         <AppContext.Provider value={{
-            data, cart, setCart, openCartModal, openImageNavModal, setOpenCartModal, setOpenImageNavModal, closeAllModals, cartItemsCost, setCartItemsCost, handleBackgroundClick, newName, openCheckoutModal, setOpenCheckoutModal
+            data, cart, setCart, openCartModal, openImageNavModal, setOpenCartModal, setOpenImageNavModal, closeAllModals, cartItemsCost, setCartItemsCost, handleBackgroundClick, newName, openCheckoutModal, setOpenCheckoutModal, shippingFee, grandTotal, setGrandTotal, vatValue
         }}>
             {children}
         </AppContext.Provider>

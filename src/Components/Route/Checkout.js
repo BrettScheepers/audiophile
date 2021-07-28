@@ -6,21 +6,19 @@ import { useGlobalContext } from '../../context'
 
 const Checkout = () => {
     const history = useHistory()
-    const { cart, newName, cartItemsCost, setOpenCheckoutModal } = useGlobalContext()
+    const { cart, newName, cartItemsCost, setOpenCheckoutModal, shippingFee, vatValue, grandTotal } = useGlobalContext()
 
     useEffect(() => {
         if (cart.length === 0) history.goBack()
     }, [])
 
     const [paymentOption, setPaymentOption] = useState(null);
-    const shippingFee = 200
-    const vatValue = Math.floor(cartItemsCost/100*14)
-    const grandTotal = cartItemsCost + shippingFee
+    
 
     const continueToFinalCheckout = (e) => {
         e.preventDefault()
 
-        // setOpenCheckoutModal(true)
+        setOpenCheckoutModal(true)
     }
 
     return (

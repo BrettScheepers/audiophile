@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context'
 const HeaderNav = () => {
     const history = useHistory()
 
-    const { setOpenCartModal, setOpenImageNavModal, openCartModal, openImageNavModal, closeAllModals } = useGlobalContext()
+    const { setOpenCartModal, setOpenImageNavModal, openCartModal, openImageNavModal, closeAllModals, cart } = useGlobalContext()
 
     return (
         <header className="header-nav">
@@ -31,11 +31,16 @@ const HeaderNav = () => {
                         Earphones
                     </NavLink>
                 </ul>
-                <img onClick={() => { 
+                <div className="cart-btn-container"
+                     onClick={() => { 
                         setOpenImageNavModal(false)
                         setOpenCartModal(!openCartModal);
                     }}
-                    src="/assets/shared/desktop/icon-cart.svg" className="cart" alt="Cart"/>
+                >
+                    <img
+                        src="/assets/shared/desktop/icon-cart.svg" className="cart" alt="Cart"/>
+                    { cart.length > 0 && <div>{cart.length}</div>}
+                </div>
             </div>
         </header>
     )
